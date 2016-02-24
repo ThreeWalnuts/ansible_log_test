@@ -1,0 +1,15 @@
+- hosts: test_servers
+  remote_user: root
+
+  tasks:
+  - name: test connection
+    ping:
+  - name: show the second task message
+    shell: /bin/echo "this is the second task!"
+  - name: show the third task message
+    shell: /bin/echo "this is the third task!"
+
+  roles:
+  - mongo
+
+- include: ansible_include_test.yml

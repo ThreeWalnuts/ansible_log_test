@@ -1,0 +1,13 @@
+- hosts: 127.0.0.1
+  remote_user: root
+
+  tasks:
+  - name: show the included task message
+    shell: /bin/echo "this is included playbook's task"
+    with_sequence: start=1 end=50
+  - name: show the test task message
+    shell: /bin/echo "this is test task message"
+    with_sequence: start=1 end=50
+  - name: show the last test task message
+    shell: /bin/echo "this is the last test task message"
+    with_sequence: start=1 end=50
